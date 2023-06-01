@@ -42,7 +42,7 @@ const UrunSat = () => {
 
   const handleUrunEkle = async () => {
     if (!categoryId) {
-      Alert.alert('Hata', 'Lütfen bir kategori seçin');
+      Alert.alert('Error', 'Please select a category');
       return;
     }
     if (user) {
@@ -58,7 +58,7 @@ const UrunSat = () => {
           imageURI,
 
         );
-        Alert.alert('Tebrikler Ürününüz Eklendi');
+        Alert.alert('Coungratulations', 'Your product has been added');
         console.log(response);
 
         // İnputların değerlerini sıfırlayın
@@ -93,36 +93,36 @@ const UrunSat = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>Ürün Sat</Text>
-      <Text style={styles.label}>Ürün Adı</Text>
+      <Text style={styles.heading}>Product Sell</Text>
+      <Text style={styles.label}>Product Name</Text>
       <TextInput
         style={styles.input}
         value={urun_adi}
         onChangeText={setUrunAdi}
-        placeholder="Ürün adını girin"
+        placeholder="Please enter product name"
       />
-      <Text style={styles.label}>Ürün Bilgisi</Text>
+      <Text style={styles.label}>Product Information</Text>
       <TextInput
         style={styles.input}
         value={urun_bilgisi}
         onChangeText={setUrunBilgisi}
-        placeholder="Ürün bilgisini girin"
+        placeholder="Please enter product information"
       />
-      <Text style={styles.label}>Ürün Fiyatı</Text>
+      <Text style={styles.label}>Product Price</Text>
 
       <TextInput
         style={styles.input}
         value={urun_fiyati}
         onChangeText={setUrunFiyati}
-        placeholder="Ürün fiyatını girin"
+        placeholder="Please enter product price"
         keyboardType="numeric"
       />
-      <Text style={styles.label}>Kategori Seçin</Text>
+      <Text style={styles.label}>Select Category</Text>
       <Picker
         style={styles.picker}
         selectedValue={categoryId || ''}
         onValueChange={(itemValue, itemIndex) => setCategoryId(itemValue)}>
-        <Picker.Item label="Kategori Seçin" value="" />
+        <Picker.Item label="Select Category" value="" />
         {categories.map(category => (
           <Picker.Item
             key={category.category_id}
@@ -134,11 +134,11 @@ const UrunSat = () => {
 
       <TouchableOpacity style={styles.imageButton} onPress={selectImage}>
         <Text style={styles.imageButtonText}>
-          {imageURI ? 'Resmi Değiştir' : 'Resim Seç'}
+          {imageURI ? 'Change Picture' : 'Select Picture'}
         </Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.submitButton} onPress={handleUrunEkle}>
-        <Text style={styles.submitButtonText}>Ürün Ekle</Text>
+        <Text style={styles.submitButtonText}>Add Product</Text>
       </TouchableOpacity>
     </View>
   );

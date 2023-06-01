@@ -29,11 +29,11 @@ const Home = () => {
           let label;
 
           if (route.name === 'Products') {
-            label = 'Satılık Ürünler';
+            label = 'Products For Sale';
           } else if (route.name === 'SellProduct') {
-            label = 'Ürün Sat';
+            label = 'Sell Product';
           } else if (route.name === 'Profile') {
-            label = 'Profil';
+            label = 'Profile';
           }
 
           return <Text style={{ color: color }}>{label}</Text>;
@@ -48,7 +48,7 @@ const Home = () => {
         ],
       })}
     >
-      <Tab.Screen name="Products" component={Products} options={{ title: 'Satılık Ürünler',headerTitleAlign: 'center' }} />
+      <Tab.Screen name="Products" component={Products} options={{ title: 'Products For Sale',headerTitleAlign: 'center' }} />
       <Tab.Screen name="SellProduct" component={UrunSat} options={{ headerShown: false }} />
       <Tab.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
     </Tab.Navigator>

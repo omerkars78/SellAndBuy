@@ -38,7 +38,7 @@ useEffect(() => {
       // Home sayfasına geçiş yapın
       navigation.navigate('Home');
     } catch (error) {
-      Alert.alert('Hata', 'E-posta veya şifre hatalı.');
+      Alert.alert('Error', 'E-mailor password wrong.');
     }
   };
 
@@ -46,18 +46,18 @@ useEffect(() => {
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        placeholder="E-posta"
+        placeholder="E-mail"
         keyboardType="email-address"
         onChangeText={setEmail}
       />
       <TextInput
         style={styles.input}
-        placeholder="Şifre"
+        placeholder="Password"
         secureTextEntry={true}
         onChangeText={setPassword}
       />
       <View style={styles.buttonContainer}>
-        <Button title="Giriş Yap" onPress={handleSignIn} style={styles.button} />
+        <Button title="Sign In" onPress={handleSignIn} style={styles.button} />
       </View>
       <View style={styles.signUpContainer}>
         <Text style={styles.signUpText}>Hesabınız yok mu? </Text>

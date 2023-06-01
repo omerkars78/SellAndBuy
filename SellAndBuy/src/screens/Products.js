@@ -89,7 +89,7 @@ const Products = () => {
           selectedValue={selectedCategory}
           style={styles.picker}
           onValueChange={itemValue => setSelectedCategory(itemValue)}>
-          <Picker.Item label="Hepsi" value={null} />
+          <Picker.Item label="All" value={null} />
           {categories.map(category => (
             <Picker.Item
               key={category.category_id}
@@ -102,9 +102,9 @@ const Products = () => {
           selectedValue={sortOrder}
           style={styles.picker}
           onValueChange={itemValue => setSortOrder(itemValue)}>
-          <Picker.Item label="Sıralama" value={null} />
-          <Picker.Item label="Yeni" value="desc" />
-          <Picker.Item label="Eski" value="asc" />
+          <Picker.Item label="Arrangement" value={null} />
+          <Picker.Item label="New" value="desc" />
+          <Picker.Item label="Old" value="asc" />
         </Picker>
       </View>
       <FlatList

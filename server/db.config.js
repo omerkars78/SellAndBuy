@@ -1,9 +1,9 @@
 const config = {
   db: {
-      host: "127.0.0.1",
-      user: "root",
-      password: "",
-      database: "purchase_and_sale"
+      host: "your_host",
+      user: "your_username",
+      password: "your_password",
+      database: "your_db_name"
   }
   
 }

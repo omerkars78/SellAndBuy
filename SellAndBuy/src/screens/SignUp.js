@@ -10,53 +10,50 @@ const SignUp = ({ navigation }) => {
   const [password, setPassword] = useState('');
 
   const handleSignUp = async () => {
-    if (!email.endsWith('@ogr.deu.edu.tr')) {
-      Alert.alert('Hata', 'Lütfen @ogr.deu.edu.tr uzantılı bir e-posta adresi kullanın.');
-      return;
-    }
     try {
       const response = await signUp(email, isim, soyisim, tel_no, password);
       console.log('SignUp Response:', response);
-      Alert.alert('Tebrikler', 'Başarıyla üyeliğiniz gerçekleşti.');
+      Alert.alert('Congratulations', 'Your membership has been successfully created.');
       navigation.navigate('SignIn');
     } catch (error) {
       console.log(error);
-      Alert.alert('Hata', 'Üyelik oluşturulamadı.');
+      Alert.alert('Error', 'Failed to create membership.');
     }
   };
+
 
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        placeholder="E-posta"
+        placeholder="E-mail"
         onChangeText={setEmail}
         keyboardType="email-address"
       />
       <TextInput
         style={styles.input}
-        placeholder="İsim"
+        placeholder="Name"
         onChangeText={setIsim}
       />
       <TextInput
         style={styles.input}
-        placeholder="Soyisim"
+        placeholder="Surname"
         onChangeText={setSoyisim}
       />
       <TextInput
         style={styles.input}
-        placeholder="Telefon Numarası"
+        placeholder="Phone Number"
         onChangeText={setTelNo}
         keyboardType="phone-pad"
       />
       <TextInput
         style={styles.input}
-        placeholder="Şifre"
+        placeholder="Password"
         onChangeText={setPassword}
         secureTextEntry
       />
       <View style={styles.buttonContainer}>
-        <Button title="Üye Ol" onPress={handleSignUp} />
+        <Button title="Sign Up" onPress={handleSignUp} />
       </View>
     </View>
   );

@@ -73,7 +73,7 @@ const ProfileScreen = () => {
             value={item.satildi_bilgisi === 1}
             onValueChange={newValue => toggleSatildi(item.urun_id, newValue)}
           />
-          <Text>Satıldı mı?</Text>
+          <Text>Is it sold?</Text>
         </View>
       </View>
     </View>
@@ -87,13 +87,13 @@ const ProfileScreen = () => {
     <View style={styles.container}>
       {user && (
         <>
-          <Text style={styles.title}>Profil Bilgileri</Text>
-          <Text>İsim: {user.isim}</Text>
-          <Text>Soyisim: {user.soyisim}</Text>
+          <Text style={styles.title}>Profile Informations</Text>
+          <Text>Name: {user.isim}</Text>
+          <Text>Surname: {user.soyisim}</Text>
           <Text>Email: {user.email}</Text>
-          <Text>Telefon: {user.tel_no}</Text>
+          <Text>Nummer: {user.tel_no}</Text>
 
-          <Text style={styles.title}>Ürünlerim</Text>
+          <Text style={styles.title}>My products</Text>
           <FlatList
             data={urunler}
             renderItem={renderItem}
@@ -108,7 +108,7 @@ const ProfileScreen = () => {
             }
           />
           <TouchableOpacity onPress={handleSignOut}>
-            <Text style={styles.signOutButton}>Çıkış Yap</Text>
+            <Text style={styles.signOutButton}>Sign out</Text>
           </TouchableOpacity>
         </>
       )}
