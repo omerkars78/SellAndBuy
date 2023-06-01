@@ -19,7 +19,7 @@ const App = () => {
           name="SignIn"
           component={SignIn}
           options={{
-            title: 'Giriş Yap',
+            title: 'Sign In',
             headerTitleAlign: 'center',
             headerLeft: null,
           
@@ -28,12 +28,12 @@ const App = () => {
         <Stack.Screen
           name="SignUp"
           component={SignUp}
-          options={{ title: 'Üye Ol' }}
+          options={{ title: 'Be Member' }}
         />
         <Stack.Screen
           name="Home"
           component={Home}
-          options={{ title: 'Anasayfa' ,headerShown: false }}
+          options={{ title: 'Home Page' ,headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>
